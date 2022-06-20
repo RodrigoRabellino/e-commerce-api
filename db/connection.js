@@ -1,7 +1,7 @@
 const { connect, connection } = require("mongoose");
 
 const initDB = () => {
-  connect("mongodb://localhost/e-commerce");
+  connect(process.env.MONGO_URL);
   connection
     .once("open", () => console.log("mongoDB is ready"))
     .on("error", (error) => console.log("error", error));
