@@ -28,10 +28,6 @@ const UserSchema = new Schema(
     phone: {
       type: String,
     },
-    profileImage: {
-      type: String,
-      required: true,
-    },
     ordersHistory: [
       {
         type: Types.ObjectId,
@@ -47,7 +43,5 @@ const User = model("User", UserSchema);
 User.hashPassword = async (password) => await bcrypt.hash(password, 10);
 User.comparePassword = async (password, hashedPassword) =>
   await bcrypt.compare(password, hashedPassword);
-
-const User = model("User", UserSchema);
 
 module.exports = { User };

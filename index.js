@@ -7,5 +7,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 require("./db/connection")();
+require("./seeders/initialSetup")(false);
 
 app.listen(port, () => console.log("listen port: " + port));
