@@ -2,6 +2,7 @@ const { User } = require("../db/models/user");
 const { Admin } = require("../db/models/admin");
 const { Category } = require("../db/models/category");
 const { Product } = require("../db/models/product");
+const products = require("../products.json");
 
 const createUser = async () => {
   const password = await User.hashPassword("1234");
@@ -29,27 +30,89 @@ const createAdmin = async () => {
 };
 
 const createCategory = async () => {
-  const category = await Category.create({
-    name: "guitar",
-  });
+  const category = await Category.create([
+    { name: "guitar" },
+    { name: "amplifier" },
+    { name: "accesories" },
+  ]);
   console.log("category created", category);
 };
+
 const createProduct = async () => {
-  const product = await Product.create({
-    name: "Guitar LesPaul Relique",
-    description:
-      "The new Les Paul Standard returns to the classic design that made it relevant, played and loved -- shaping sound across generations and genres of music. It pays tribute to Gibson's Golden Era of innovation and brings authenticity back to life.",
-    imgUrl: [
-      "https://static.gibson.com/product-images/USA/USAUBC849/Tobacco%20Burst/hardware-500_500.png",
-      "https://static.gibson.com/product-images/USA/USAUBC849/Tobacco Burst/front-300_600.png",
-    ],
-    price: 1500,
-    stock: 5,
-    categoryId: "62b10046f3d5c27377f6204b",
-    starred: false,
-    slug: "les-paul-relique",
-    createdBy: "62b10046f3d5c27377f6204d",
-  });
-  console.log("category created", product);
+  for (const guitar of products.guitar) {
+    let {
+      name,
+      description,
+      imgUrl,
+      price,
+      stock,
+      categoryId,
+      starred,
+      slug,
+      createdBy,
+    } = guitar;
+    const product = await Product.create({
+      name,
+      description,
+      imgUrl,
+      price,
+      stock,
+      categoryId,
+      starred,
+      slug,
+      createdBy,
+    });
+    console.log("guitars created", product);
+  }
+  for (const amplifier of products.amplifier) {
+    let {
+      name,
+      description,
+      imgUrl,
+      price,
+      stock,
+      categoryId,
+      starred,
+      slug,
+      createdBy,
+    } = amplifier;
+    const product = await Product.create({
+      name,
+      description,
+      imgUrl,
+      price,
+      stock,
+      categoryId,
+      starred,
+      slug,
+      createdBy,
+    });
+    console.log("amps created", product);
+  }
+  for (const accesory of products.accesory) {
+    let {
+      name,
+      description,
+      imgUrl,
+      price,
+      stock,
+      categoryId,
+      starred,
+      slug,
+      createdBy,
+    } = accesory;
+    const product = await Product.create({
+      name,
+      description,
+      imgUrl,
+      price,
+      stock,
+      categoryId,
+      starred,
+      slug,
+      createdBy,
+    });
+    console.log("accesories created", product);
+  }
 };
 module.exports = { createAdmin, createCategory, createUser, createProduct };
