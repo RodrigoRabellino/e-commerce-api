@@ -2,10 +2,10 @@ const categoryRoutes = require("express").Router();
 const methodOverride = require("method-override");
 const {
   index,
-  store,
-  destroy,
   show,
+  store,
   update,
+  destroy,
 } = require("../controllers/category");
 categoryRoutes.use(methodOverride("_method"));
 

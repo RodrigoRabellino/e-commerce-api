@@ -2,10 +2,10 @@ const productRoutes = require("express").Router();
 const methodOverride = require("method-override");
 const {
   index,
+  show,
   store,
   update,
   destroy,
-  show,
 } = require("../controllers/product");
 
 productRoutes.use(methodOverride("_method"));
