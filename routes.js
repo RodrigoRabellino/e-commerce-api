@@ -1,11 +1,13 @@
 const adminRoutes = require("./routes/adminRoutes");
+const categoryRoutes = require("./routes/categoryRoutes");
+const productRoutes = require("./routes/productRoutes");
+const tokensRoutes = require("./routes/tokensRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 module.exports = (app) => {
   app.use("/admin", adminRoutes);
-  app.use("/user", (req, res) => {
-    res.json("");
-  });
-  app.use("/product", () => {});
-  app.use("/genre", () => {});
-  app.use("/tokens", () => {});
+  app.use("/user", userRoutes);
+  app.use("/product", productRoutes);
+  app.use("/category", categoryRoutes);
+  app.use("/tokens", tokensRoutes);
 };
