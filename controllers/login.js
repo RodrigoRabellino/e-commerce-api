@@ -29,17 +29,17 @@ const showAdmin = async (req, res) => {
   try {
     const admin = await Admin.findOne({ email });
 
-    if (!admin) return res.json(401);
+    if (!admin) return res.status(401).json("credentials error");
 
     const comparePass = await Admin.comparePassword(password, admin.password);
 
-    if (!comparePass) return res.json(401);
+    if (!comparePass) return res.status(401).json("credentials error");
 
     let response = {
       ...admin._doc,
       accessToken: makeToken(admin.email, admin.password),
     };
-    res.json(response);
+    res.status(200).json(response);
   } catch (error) {
     console.log("error showUser admin", error);
   }
