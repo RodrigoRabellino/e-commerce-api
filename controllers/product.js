@@ -3,7 +3,11 @@ const { Product } = require("../db/models/product");
 // Display a listing of the resource.
 const index = async (req, res) => {
   try {
-    const products = await Product.find().sort({ createdAt: "desc" });
+    const products = await Product.find()
+      .gt("stock", 0)
+      .sort({ createdAt: "desc" })
+      .limit(20);
+    console.log("pego con tuti");
     res.json(products);
   } catch (error) {
     res.json(error);
@@ -12,7 +16,8 @@ const index = async (req, res) => {
 
 // Display the specified resource.
 const show = async (req, res) => {
-  const { id } = req.params.id;
+  const { id } = req.params;
+  console.log(id);
   try {
     const product = await Product.findById(id);
     res.json(product);
@@ -51,6 +56,7 @@ const update = async (req, res) => {};
 const destroy = async (req, res) => {};
 
 const slugName = (productName) => {
+  console.log(productName);
   const slugString = productName.replace(" ", "-").toLowerCase();
   return slugString;
 };
