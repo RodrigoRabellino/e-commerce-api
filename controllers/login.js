@@ -16,7 +16,7 @@ const showUser = async (req, res) => {
 
     let response = {
       ...user._doc,
-      accessToken: makeToken(user.email, user.password),
+      accessToken: makeToken(user.email, user._id, "user"),
     };
     res.status(200).json(response);
   } catch (error) {
@@ -38,7 +38,7 @@ const showAdmin = async (req, res) => {
 
     let response = {
       ...admin._doc,
-      accessToken: makeToken(admin.email, admin.password),
+      accessToken: makeToken(admin.email, admin._id, "admin"),
     };
     res.status(200).json(response);
   } catch (error) {
@@ -49,8 +49,8 @@ const showAdmin = async (req, res) => {
 // Store a newly created resource in storage.
 const store = async (req, res) => {};
 
-const makeToken = (email, password) => {
-  return jwt.sign({ email, password }, process.env.SECRET_JWT);
+const makeToken = (email, id, type) => {
+  return jwt.sign({ email, id, type }, process.env.SECRET_JWT);
 };
 
 module.exports = {
