@@ -1,4 +1,5 @@
 const { Product } = require("../db/models/product");
+const slugify = require("slugify");
 
 // Display a listing of the resource.
 const index = async (req, res) => {
@@ -31,6 +32,7 @@ const store = async (req, res) => {
   const { name, description, imgUrl, price, stock, categoryId, createdBy } =
     req.body;
   const slug = slugName(name);
+  console.log("creando product");
   try {
     const product = await Product.create({
       name,
@@ -57,7 +59,10 @@ const destroy = async (req, res) => {};
 
 const slugName = (productName) => {
   console.log(productName);
-  const slugString = productName.replace(" ", "-").toLowerCase();
+  const slugString = slugify(productName, {
+    replacement: "_",
+    lower: true,
+  });
   return slugString;
 };
 
