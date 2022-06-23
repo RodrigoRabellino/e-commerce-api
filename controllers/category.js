@@ -4,20 +4,21 @@ const { Category } = require("../db/models/category");
 const index = async (req, res) => {
   try {
     const categories = await Category.find().sort({ createdAt: "desc" });
-    res.json(categories);
+    res.status(200).json(categories);
   } catch (error) {
-    res.json(error);
+    res.status(404).json(error);
   }
 };
 
 // Display the specified resource.
 const show = async (req, res) => {
-  const { id } = req.params.id;
+  const { id } = req.params;
+
   try {
     const category = await Category.findById(id);
-    res.json(category);
+    res.status(200).json(category);
   } catch (error) {
-    res.json(error);
+    res.status(404).json(error);
   }
 };
 
@@ -26,7 +27,7 @@ const store = async (req, res) => {
   const { name } = req.body;
   try {
     const category = await Category.create({ name });
-    res.json(category);
+    res.status(201).json(category);
   } catch (error) {
     res.json(error);
   }

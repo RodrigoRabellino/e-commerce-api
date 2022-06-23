@@ -1,28 +1,30 @@
 const { Admin } = require("../db/models/admin");
 // Display a listing of the resource.
-async function index(req, res) {
+const index = async (req, res) => {
   try {
-    const admins = Admin.find();
-    res.json(admins);
+    const admins = await Admin.find();
+    res.status(200).json(admins);
   } catch (error) {
+    res.status(404).json(error);
     console.log("error show admin", error);
   }
-}
+};
 
 // Display the specified resource.
-async function show(req, res) {
+const show = async (req, res) => {
   const { id } = req.params;
   try {
-    const admin = Admin.findById(id);
-    res.json(admin);
+    const admin = await Admin.findById(id);
+    res.status(200).json(admin);
   } catch (error) {
+    res.status(404).json(error);
     console.log("error show admin", error);
   }
-}
+};
 
 // Store a newly created resource in storage.
-async function store(req, res) {
-  const password = Admin.hashPassword(req.body.password);
+const store = async (req, res) => {
+  const password = await Admin.hashPassword(req.body.password);
   const { firstName, lastName, email } = req.body;
   try {
     const admin = Admin.create({ firstName, lastName, email, password });
@@ -30,13 +32,13 @@ async function store(req, res) {
   } catch (error) {
     console.log("error store admin", error);
   }
-}
+};
 
 // Update the specified resource in storage.
-async function update(req, res) {}
+const update = async (req, res) => {};
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {}
+const destroy = async (req, res) => {};
 
 module.exports = {
   index,
