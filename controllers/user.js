@@ -4,9 +4,9 @@ const { User } = require("../db/models/user");
 const index = async (req, res) => {
   try {
     const users = await Product.find().sort({ createdAt: "desc" });
-    res.json(users);
+    res.status(200).json(users);
   } catch (error) {
-    res.json(error.toString());
+    res.status(400).json(error.toString());
   }
 };
 

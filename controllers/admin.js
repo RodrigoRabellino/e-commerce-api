@@ -28,8 +28,9 @@ const store = async (req, res) => {
   const { firstName, lastName, email } = req.body;
   try {
     const admin = Admin.create({ firstName, lastName, email, password });
-    res.json(admin);
+    res.status(201).json(admin);
   } catch (error) {
+    res.status(400).json(error);
     console.log("error store admin", error);
   }
 };

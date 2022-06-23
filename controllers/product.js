@@ -9,18 +9,18 @@ const index = async (req, res) => {
       .sort({ createdAt: "desc" })
       .limit(20);
     console.log("pego con tuti");
-    res.json(products);
+    res.status(200).json(products);
   } catch (error) {
-    res.json(error);
+    res.status(400).json(error);
   }
 };
 
 const indexStarred = async (req, res) => {
   try {
     const starredProducts = await Product.find({ starred: true });
-    res.json(starredProducts);
+    res.status(200).json(starredProducts);
   } catch (error) {
-    res.json(error);
+    res.status(400).json(error);
   }
 };
 
@@ -30,9 +30,9 @@ const show = async (req, res) => {
   console.log(id);
   try {
     const product = await Product.findById(id);
-    res.json(product);
+    res.status(200).json(product);
   } catch (error) {
-    res.json(error);
+    res.status(400).json(error);
   }
 };
 
@@ -54,9 +54,9 @@ const store = async (req, res) => {
       starred: false,
       slug,
     });
-    res.json(product);
+    res.status(201).json(product);
   } catch (error) {
-    res.json(error);
+    res.status(400).json(error);
   }
 };
 

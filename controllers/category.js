@@ -29,7 +29,7 @@ const store = async (req, res) => {
     const category = await Category.create({ name });
     res.status(201).json(category);
   } catch (error) {
-    res.json(error);
+    res.status(400).json(error);
   }
 };
 
