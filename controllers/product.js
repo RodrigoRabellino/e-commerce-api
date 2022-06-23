@@ -15,6 +15,15 @@ const index = async (req, res) => {
   }
 };
 
+const indexStarred = async (req, res) => {
+  try {
+    const starredProducts = await Product.find({ starred: true });
+    res.json(starredProducts);
+  } catch (error) {
+    res.json(error);
+  }
+};
+
 // Display the specified resource.
 const show = async (req, res) => {
   const { id } = req.params;
@@ -68,6 +77,7 @@ const slugName = (productName) => {
 
 module.exports = {
   index,
+  indexStarred,
   show,
   store,
   update,
