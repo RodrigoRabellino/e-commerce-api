@@ -7,6 +7,7 @@ const {
   store,
   update,
   destroy,
+  showBySlug,
 } = require("../controllers/product");
 
 productRoutes.use(methodOverride("_method"));
@@ -16,6 +17,8 @@ productRoutes.get("/starred", indexStarred);
 productRoutes.post("/", store);
 productRoutes.put("/", update);
 productRoutes.delete("/", destroy);
+
 productRoutes.get("/:id", show);
+productRoutes.get("/slug/:slug", showBySlug);
 
 module.exports = productRoutes;

@@ -36,12 +36,23 @@ const show = async (req, res) => {
   }
 };
 
+const showBySlug = async (req, res) => {
+  const { slug } = req.params;
+  console.log("slug", slug);
+  try {
+    const product = await Product.findOne({ slug: slug });
+    if (!product) return res.status(404).json("product not found");
+    res.status(200).json(product);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+};
+
 // Store a newly created resource in storage.
 const store = async (req, res) => {
   const { name, description, imgUrl, price, stock, categoryId, createdBy } =
     req.body;
   const slug = slugName(name);
-  console.log("creando product");
   try {
     const product = await Product.create({
       name,
@@ -82,4 +93,5 @@ module.exports = {
   store,
   update,
   destroy,
+  showBySlug,
 };
