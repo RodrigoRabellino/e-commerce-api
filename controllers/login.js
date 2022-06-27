@@ -52,7 +52,11 @@ const showAdmin = async (req, res) => {
 const store = async (req, res) => {};
 
 const makeToken = (email, id, type) => {
-  return jwt.sign({ email, id, type }, process.env.SECRET_JWT);
+  const secret =
+    type === "admin"
+      ? process.env.SECRET_JWT_ADMIN
+      : process.env.SECRET_JWT_USER;
+  return jwt.sign({ email, id, type }, secret);
 };
 
 module.exports = {
