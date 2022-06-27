@@ -15,7 +15,8 @@ const show = async (req, res) => {
   const { id } = req.params;
   try {
     const admin = await Admin.findById(id);
-    res.status(200).json(admin);
+    const { _id, firstName, lastName, email } = admin;
+    res.status(200).json({ _id, firstName, lastName, email });
   } catch (error) {
     res.status(404).json(error);
     console.log("error show admin", error);

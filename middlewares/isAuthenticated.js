@@ -1,9 +1,8 @@
 const jwt = require("jsonwebtoken");
 module.exports = (req, res, next) => {
-  console.log(req.body);
   try {
     const validate = jwt.verify(
-      req.body.accessToken,
+      req.query.accessToken,
       process.env.SECRET_JWT_ADMIN
     );
     if (validate) return next();
