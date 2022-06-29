@@ -11,7 +11,7 @@ module.exports = async (generate) => {
       //   createAdmin();
       //   createCategory();
       //   createUser();
-      // createProduct();
+      createProduct();
     } catch (error) {
       console.log("initialSetup", error);
     }

@@ -12,6 +12,7 @@
       "stock": "15",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": true,
+      "show": true,
       "slug": "taylor_214ce_deluxe_acoustic-electric_guitar",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -27,6 +28,7 @@
       "stock": "23",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": false,
+      "show": true,
       "slug": "taylor_gs_Mini-e_koa_acoustic-electric_guitar",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -42,6 +44,7 @@
       "stock": "9",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -57,6 +60,7 @@
       "stock": "32",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -72,6 +76,7 @@
       "stock": "9",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -87,6 +92,7 @@
       "stock": "7",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -102,6 +108,7 @@
       "stock": "11",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -117,6 +124,7 @@
       "stock": "16",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -132,6 +140,7 @@
       "stock": "10",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -147,6 +156,7 @@
       "stock": "24",
       "categoryId": "62b10046f3d5c27377f6204b",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     }
@@ -164,6 +174,7 @@
       "stock": "13",
       "categoryId": "62b1e5e7b11d642f54e65355",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -179,6 +190,7 @@
       "stock": "18",
       "categoryId": "62b1e5e7b11d642f54e65355",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -194,6 +206,7 @@
       "stock": "10",
       "categoryId": "62b1e5e7b11d642f54e65355",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -209,6 +222,7 @@
       "stock": "3",
       "categoryId": "62b1e5e7b11d642f54e65355",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -224,6 +238,7 @@
       "stock": "31",
       "categoryId": "62b1e5e7b11d642f54e65355",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -239,6 +254,7 @@
       "stock": "15",
       "categoryId": "62b1e5e7b11d642f54e65355",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -254,6 +270,7 @@
       "stock": "8",
       "categoryId": "62b1e5e7b11d642f54e65355",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -269,6 +286,7 @@
       "stock": "5",
       "categoryId": "62b1e5e7b11d642f54e65355",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     }
@@ -286,6 +304,7 @@
       "stock": "15",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -301,6 +320,7 @@
       "stock": "19",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -315,6 +335,7 @@
       "stock": "19",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -330,6 +351,7 @@
       "stock": "30",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -345,6 +367,7 @@
       "stock": "22",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": true,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -360,6 +383,7 @@
       "stock": "7",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     }

@@ -32,6 +32,10 @@ const ProductSchema = new Schema(
       type: Boolean,
       required: true,
     },
+    show: {
+      type: Boolean,
+      required: true,
+    },
     slug: {
       type: String,
       ref: "Order",

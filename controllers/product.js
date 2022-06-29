@@ -1,14 +1,23 @@
 const { Product } = require("../db/models/product");
 const slugify = require("slugify");
 
-// Display a listing of the resource.
+// Display a listing of the resource when show is true.
 const index = async (req, res) => {
   try {
-    const products = await Product.find()
-      .gt("stock", 0)
+    const products = await Product.find({ show: true })
       .sort({ createdAt: "desc" })
       .limit(20);
-    console.log("pego con tuti");
+    console.log("user pego");
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+// Display a listing of the resource for admins.
+const indexAll = async (req, res) => {
+  try {
+    const products = await Product.find().sort({ createdAt: "desc" });
+    console.log("admin pego ");
     res.status(200).json(products);
   } catch (error) {
     res.status(400).json(error);
@@ -63,6 +72,7 @@ const store = async (req, res) => {
       categoryId,
       createdBy,
       starred: false,
+      show: true,
       slug,
     });
     res.status(201).json(product);
@@ -77,6 +87,9 @@ const update = async (req, res) => {};
 // Remove the specified resource from storage.
 const destroy = async (req, res) => {};
 
+// change "show" attribute in specified resource from storage.
+const updateShow = async (req, res) => {};
+
 const slugName = (productName) => {
   console.log(productName);
   const slugString = slugify(productName, {
@@ -88,10 +101,12 @@ const slugName = (productName) => {
 
 module.exports = {
   index,
+  indexAll,
   indexStarred,
   show,
   store,
   update,
+  updateShow,
   destroy,
   showBySlug,
 };

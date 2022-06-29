@@ -49,6 +49,7 @@ const createProduct = async () => {
       categoryId,
       starred,
       slug,
+      show,
       createdBy,
     } = guitar;
     const product = await Product.create({
@@ -60,6 +61,7 @@ const createProduct = async () => {
       categoryId,
       starred,
       slug,
+      show,
       createdBy,
     });
     console.log("guitars created", product);
@@ -74,6 +76,7 @@ const createProduct = async () => {
       categoryId,
       starred,
       slug,
+      show,
       createdBy,
     } = amplifier;
     const product = await Product.create({
@@ -85,6 +88,7 @@ const createProduct = async () => {
       categoryId,
       starred,
       slug,
+      show,
       createdBy,
     });
     console.log("amps created", product);
@@ -99,6 +103,7 @@ const createProduct = async () => {
       categoryId,
       starred,
       slug,
+      show,
       createdBy,
     } = accesory;
     const product = await Product.create({
@@ -110,6 +115,7 @@ const createProduct = async () => {
       categoryId,
       starred,
       slug,
+      show,
       createdBy,
     });
     console.log("accesories created", product);
