@@ -88,7 +88,32 @@ const update = async (req, res) => {};
 const destroy = async (req, res) => {};
 
 // change "show" attribute in specified resource from storage.
-const updateShow = async (req, res) => {};
+const updateShow = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const product = await Product.findById(id);
+    product.show = !product.show;
+    product.save();
+    res.status(201).json(product);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+};
+// change "starred" attribute in specified resource from storage.
+const updateStarred = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const product = await Product.findById(id);
+    product.starred = !product.starred;
+    product.save();
+    console.log(product.starred);
+    res.status(201).json(product);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+};
 
 const slugName = (productName) => {
   console.log(productName);
@@ -107,6 +132,7 @@ module.exports = {
   store,
   update,
   updateShow,
+  updateStarred,
   destroy,
   showBySlug,
 };
