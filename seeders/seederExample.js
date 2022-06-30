@@ -5,11 +5,11 @@ const { Product } = require("../db/models/product");
 const products = require("../products.json");
 
 const createUser = async () => {
-  const password = await User.hashPassword("1234");
+  const password = await User.hashPassword("12345678");
   const user = await User.create({
-    firstName: "Rodrigo",
-    lastName: "Rabellino",
-    email: "rorabe93@gmail.com",
+    firstName: "User",
+    lastName: "User",
+    email: "user@user.com",
     password,
     address: ["Cmno brandi km 34.500"],
     phone: "092561775",

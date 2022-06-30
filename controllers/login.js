@@ -5,7 +5,7 @@ const { User } = require("../db/models/user");
 // Display the specified resource.
 const showUser = async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
+
   try {
     const user = await User.findOne({ email });
 
