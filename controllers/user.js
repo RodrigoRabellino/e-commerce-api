@@ -12,7 +12,15 @@ const index = async (req, res) => {
 };
 
 // Display the specified resource.
-const show = async (req, res) => {};
+const show = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findById(id);
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
 
 // Store a newly created resource in storage.
 const store = async (req, res) => {};
