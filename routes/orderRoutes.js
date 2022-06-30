@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 orderRoutes.use(methodOverride("_method"));
 
 orderRoutes.get("/", isAuthenticated, index);
-orderRoutes.post("/", isUserAuthenticated, store);
+orderRoutes.post("/:id", isUserAuthenticated, store);
 orderRoutes.put("/", isUserAuthenticated, update);
 // orderRoutes.delete("/", destroy);
 orderRoutes.get("/:id", isUserAuthenticated, show);

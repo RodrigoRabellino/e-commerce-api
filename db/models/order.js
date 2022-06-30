@@ -7,6 +7,10 @@ const OrderSchema = new Schema(
       ref: "User",
       required: true,
     },
+    shippingDetails: {
+      type: Object,
+      required: true,
+    },
     products: [
       {
         productId: { type: Types.ObjectId, ref: "Product", required: true },
@@ -15,6 +19,10 @@ const OrderSchema = new Schema(
     ],
     totalPrice: {
       type: Number,
+      require: true,
+    },
+    status: {
+      type: "String",
       require: true,
     },
   },
