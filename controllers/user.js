@@ -3,10 +3,11 @@ const { User } = require("../db/models/user");
 // Display a listing of the resource.
 const index = async (req, res) => {
   try {
-    const users = await Product.find().sort({ createdAt: "desc" });
-    res.status(200).json(users);
+    const users = await User.find().sort({ createdAt: "desc" });
+    res.status(201).json(users);
   } catch (error) {
-    res.status(400).json(error.toString());
+    console.log(error);
+    res.status(400).json(error);
   }
 };
 
