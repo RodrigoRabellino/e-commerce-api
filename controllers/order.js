@@ -15,8 +15,8 @@ const show = async (req, res) => {};
 
 // Store a newly created resource in storage.
 const store = async (req, res) => {
+  const { id: userId } = req.params;
   const {
-    userId,
     firstName,
     lastName,
     address,
@@ -25,7 +25,7 @@ const store = async (req, res) => {
     state,
     zip,
     country,
-    products,
+    cart,
     totalPrice,
   } = req.body;
 
@@ -40,15 +40,20 @@ const store = async (req, res) => {
     country,
   };
 
+  const products = cart.map((product) => {
+    return { productId: product._id, productQty: product.qty };
+  });
+
   try {
-    const order = Order.create({
+    const order = await Order.create({
       userId,
       shippingDetails,
       products,
       totalPrice,
       status: "confirmed",
-    }); //status confirmed, inTransit,delivered,
-    console.log(order);
+    });
+    //status confirmed, inTransit,delivered,
+
     res.status(201).json(order);
   } catch (error) {
     console.log(error);

@@ -10,6 +10,7 @@ module.exports = (req, res, next) => {
         return decoded.id === id;
       }
     );
+    console.log(validate);
     if (validate) return next();
   } catch (error) {
     console.log("error in middleware isAuth", error);
