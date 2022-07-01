@@ -4,7 +4,7 @@ const { Order } = require("../db/models/order");
 const index = async (req, res) => {
   try {
     const orders = await Order.find().sort({ createdAt: "desc" });
-    res.status(200).json(orders);
+    res.status(201).json(orders);
   } catch (error) {
     res.status(404).json(error.toString());
   }
