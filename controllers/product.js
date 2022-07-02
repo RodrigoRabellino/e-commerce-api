@@ -82,7 +82,19 @@ const store = async (req, res) => {
 };
 
 // Update the specified resource in storage.
-const update = async (req, res) => {};
+const update = async (req, res) => {
+  const { id } = req.params;
+  const data = req.body;
+  data.slug = slugName(data.name);
+  try {
+    const product = await Product.findByIdAndUpdate(id, data, { new: true });
+    console.log(product);
+    res.status(201).json(product);
+  } catch (error) {
+    console.log("soy el error --.>>", error);
+    res.status(400).json(error);
+  }
+};
 
 // Remove the specified resource from storage.
 const destroy = async (req, res) => {};

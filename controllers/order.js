@@ -3,7 +3,9 @@ const { Order } = require("../db/models/order");
 // Display a listing of the resource.
 const index = async (req, res) => {
   try {
-    const orders = await Order.find().sort({ createdAt: "desc" });
+    const orders = await Order.find()
+      .populate("userId")
+      .sort({ createdAt: "desc" });
     res.status(201).json(orders);
   } catch (error) {
     res.status(404).json(error.toString());

@@ -6,6 +6,7 @@ const orderRoutes = require("./routes/orderRoutes");
 const productRoutes = require("./routes/productRoutes");
 const tokensRoutes = require("./routes/tokensRoutes");
 const userRoutes = require("./routes/userRoutes");
+const initialSetup = require("./seeders/initialSetup");
 
 module.exports = (app) => {
   app.use("/admin", isAuthenticated, adminRoutes);
@@ -15,4 +16,5 @@ module.exports = (app) => {
   app.use("/tokens", tokensRoutes);
   app.use("/login", loginRoutes);
   app.use("/order", orderRoutes);
+  app.use("/resetDataBase", initialSetup);
 };

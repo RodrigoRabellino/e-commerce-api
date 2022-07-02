@@ -20,7 +20,7 @@ productRoutes.get("/", index);
 productRoutes.get("/starred", indexStarred);
 productRoutes.get("/all", isAuthenticated, indexAll);
 productRoutes.post("/", isAuthenticated, store);
-productRoutes.put("/", isAuthenticated, update);
+productRoutes.put("/:id", isAuthenticated, update);
 
 productRoutes.put("/starred/:id", isAuthenticated, updateStarred);
 productRoutes.delete("/:id", isAuthenticated, updateShow);

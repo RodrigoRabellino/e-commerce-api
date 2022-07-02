@@ -8,7 +8,6 @@ adminRoutes.get("/", index);
 adminRoutes.post("/", store);
 adminRoutes.put("/", update);
 adminRoutes.delete("/", destroy);
-
 adminRoutes.get("/:id", show);
 
 module.exports = adminRoutes;
