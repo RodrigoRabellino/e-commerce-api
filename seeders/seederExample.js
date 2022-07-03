@@ -177,7 +177,7 @@ const createProduct = async () => {
     });
     console.log("basses created", product);
   }
-  for (const effect of products.effect) {
+  for (const effect of products.effects) {
     let {
       name,
       description,
@@ -189,7 +189,7 @@ const createProduct = async () => {
       slug,
       show,
       createdBy,
-    } = accesory;
+    } = effect;
     const product = await Product.create({
       name,
       description,
