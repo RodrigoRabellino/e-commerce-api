@@ -4,9 +4,12 @@ const slugify = require("slugify");
 // Display a listing of the resource when show is true.
 const index = async (req, res) => {
   try {
+    const { page = 1, limit = 10 } = req.query;
     const products = await Product.find({ show: true })
       .sort({ createdAt: "desc" })
-      .limit(20);
+      .limit(limit)
+      .skip((page - 1) * limit)
+      .exec();
     console.log("user pego");
     res.status(200).json(products);
   } catch (error) {
