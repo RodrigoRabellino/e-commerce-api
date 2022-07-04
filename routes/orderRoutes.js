@@ -7,7 +7,7 @@ orderRoutes.use(methodOverride("_method"));
 
 orderRoutes.get("/", isAuthenticated, index);
 orderRoutes.post("/:id", isUserAuthenticated, store);
-orderRoutes.put("/", isUserAuthenticated, update);
+orderRoutes.put("/:id", isAuthenticated, update);
 // orderRoutes.delete("/", destroy);
 orderRoutes.get("/:id", isUserAuthenticated, show);
 

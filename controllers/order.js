@@ -63,7 +63,19 @@ const store = async (req, res) => {
 };
 
 // Update the specified resource in storage.
-const update = async (req, res) => {};
+const update = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const order = await Order.findByIdAndUpdate(
+      id,
+      { status: "shipped" },
+      { new: true }
+    ).populate("userId");
+    res.status(201).json(order);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
 
 // Remove the specified resource from storage.
 const destroy = async (req, res) => {};
