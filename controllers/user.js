@@ -25,8 +25,7 @@ const show = async (req, res) => {
 
 // Store a newly created resource in storage.
 const store = async (req, res) => {
-  console.log("create user");
-  let { firstName, lastName, email, password } = req.body;
+  let { firstName, lastName, email, password, address, phone } = req.body;
   const hashedPassword = await User.hashPassword(password);
   try {
     const user = await User.create({
@@ -34,8 +33,9 @@ const store = async (req, res) => {
       lastName,
       email,
       password: hashedPassword,
+      address,
+      phone,
     });
-    console.log("user created", user);
     let response = {
       ...user._doc,
       accessToken: makeToken(user.email, user._id, "user"),
