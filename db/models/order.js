@@ -8,7 +8,7 @@ const OrderSchema = new Schema(
       required: true,
     },
     shippingDetails: {
-      type: Object,
+      type: {},
       required: true,
     },
     products: [

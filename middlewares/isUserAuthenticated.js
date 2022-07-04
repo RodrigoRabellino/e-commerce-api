@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
       req.query.accessToken,
       process.env.SECRET_JWT_USER,
       (err, decoded) => {
-        console.log(decoded);
         return decoded.id === id;
       }
     );

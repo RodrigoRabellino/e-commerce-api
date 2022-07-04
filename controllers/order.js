@@ -18,29 +18,7 @@ const show = async (req, res) => {};
 // Store a newly created resource in storage.
 const store = async (req, res) => {
   const { id: userId } = req.params;
-  const {
-    firstName,
-    lastName,
-    address,
-    address2,
-    city,
-    state,
-    zip,
-    country,
-    cart,
-    totalPrice,
-  } = req.body;
-
-  const shippingDetails = {
-    firstName,
-    lastName,
-    address,
-    address2,
-    city,
-    state,
-    zip,
-    country,
-  };
+  const { shippingDetails, cart, totalPrice } = req.body;
 
   const products = cart.map((product) => {
     return { productId: product._id, productQty: product.qty };
@@ -54,8 +32,7 @@ const store = async (req, res) => {
       totalPrice,
       status: "confirmed",
     });
-    //status confirmed, inTransit,delivered,
-
+    //status confirmed, shipped,delivered,
     res.status(201).json(order);
   } catch (error) {
     console.log(error);
@@ -66,11 +43,9 @@ const store = async (req, res) => {
 const update = async (req, res) => {
   const { id } = req.params;
   try {
-    const order = await Order.findByIdAndUpdate(
-      id,
-      { status: "shipped" },
-      { new: true }
-    ).populate("userId");
+    const order = await Order.findById(id).populate("userId");
+    order.status = order.status === "shipped" ? "delivered" : "shipped";
+    order.save();
     res.status(201).json(order);
   } catch (error) {
     res.status(400).json(error);
