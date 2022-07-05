@@ -104,7 +104,9 @@ const update = async (req, res) => {
   const data = req.body;
   data.slug = slugName(data.name);
   try {
-    const product = await Product.findByIdAndUpdate(id, data, { new: true });
+    const product = await Product.findByIdAndUpdate(id, data, {
+      new: true,
+    }).populate("categoryId");
     console.log(product);
     res.status(201).json(product);
   } catch (error) {
@@ -120,7 +122,7 @@ const destroy = async (req, res) => {};
 const updateShow = async (req, res) => {
   const { id } = req.params;
   try {
-    const product = await Product.findById(id);
+    const product = await Product.findById(id).populate("categoryId");
     product.show = !product.show;
     product.save();
     res.status(201).json(product);
@@ -133,7 +135,7 @@ const updateShow = async (req, res) => {
 const updateStarred = async (req, res) => {
   const { id } = req.params;
   try {
-    const product = await Product.findById(id);
+    const product = await Product.findById(id).populate("categoryId");
     product.starred = !product.starred;
     product.save();
     console.log(product.starred);
