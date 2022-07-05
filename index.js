@@ -12,6 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 
 Routes(app);
 require("./db/connection")();
-require("./seeders/initialSetup")(false);
+require("./seeders/initialSetup")(true);
 
 app.listen(port, () => console.log("listen port: " + port));
