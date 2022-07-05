@@ -1,4 +1,5 @@
 const { Order } = require("../db/models/order");
+const { User } = require("../db/models/user");
 
 // Display a listing of the resource.
 const index = async (req, res) => {
@@ -33,6 +34,9 @@ const store = async (req, res) => {
       status: "confirmed",
     });
     //status confirmed, shipped,delivered,
+    const user = await User.findById(userId);
+    user.ordersHistory.push(order._id);
+    user.save();
     res.status(201).json(order);
   } catch (error) {
     console.log(error);
