@@ -22,7 +22,7 @@ productRoutes.use(methodOverride("_method"));
 productRoutes.get("/", index);
 productRoutes.get("/starred", indexStarred);
 productRoutes.get("/all", isAuthenticated, indexAll);
-productRoutes.get("/category/:id", indexCategory);
+productRoutes.get("/category/:categoryName", indexCategory);
 productRoutes.post("/", isAuthenticated, store);
 productRoutes.put("/:id", isAuthenticated, update);
 

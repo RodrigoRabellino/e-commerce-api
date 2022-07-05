@@ -1,17 +1,19 @@
 const { Product } = require("../db/models/product");
+const { Category } = require("../db/models/category");
 const slugify = require("slugify");
 
 // Display a listing of the resource when show is true.
 const index = async (req, res) => {
   try {
-    const { page = 1, limit = 10 } = req.query;
+    const { page = 1 } = req.query;
+    const count = await Product.find({ show: true }).count();
     const products = await Product.find({ show: true })
       .sort({ createdAt: "desc" })
-      .limit(limit)
-      .skip((page - 1) * limit)
+      .limit(10)
+      .skip((page - 1) * 10)
       .exec();
     console.log("user pego");
-    res.status(200).json(products);
+    res.status(200).json({ products, count });
   } catch (error) {
     res.status(400).json(error);
   }
@@ -30,13 +32,22 @@ const indexAll = async (req, res) => {
 
 //Display a listing of the resource filtered by category
 const indexCategory = async (req, res) => {
-  console.log(req.params);
   try {
-    const products = await Product.find({
-      categoryId: req.params.id,
+    const { page = 1 } = req.query.page;
+    const categories = await Category.find({ name: req.params.categoryName });
+    const count = await Product.find({
+      categoryId: categories[0]._id,
       show: true,
-    });
-    res.status(200).json(products);
+    }).count();
+    const products = await Product.find({
+      categoryId: categories[0]._id,
+      show: true,
+    })
+      .limit(10)
+      .skip((page - 1) * 10)
+      .exec();
+    console.log("user pego");
+    res.status(200).json({ products, count });
   } catch (error) {
     res.status(400).json(error);
   }
