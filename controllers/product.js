@@ -27,6 +27,20 @@ const indexAll = async (req, res) => {
   }
 };
 
+//Display a listing of the resource filtered by category
+const indexCategory = async (req, res) => {
+  console.log(req.params);
+  try {
+    const products = await Product.find({
+      categoryId: req.params.id,
+      show: true,
+    });
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+
 const indexStarred = async (req, res) => {
   try {
     const starredProducts = await Product.find({ starred: true });
@@ -39,7 +53,6 @@ const indexStarred = async (req, res) => {
 // Display the specified resource.
 const show = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   try {
     const product = await Product.findById(id);
     res.status(200).json(product);
@@ -142,6 +155,7 @@ const slugName = (productName) => {
 module.exports = {
   index,
   indexAll,
+  indexCategory,
   indexStarred,
   show,
   store,

@@ -1,9 +1,12 @@
 const productRoutes = require("express").Router();
 const isAuthenticated = require("../middlewares/isAuthenticated");
+const isUserAuthenticated = require("../middlewares/isUserAuthenticated");
+
 const methodOverride = require("method-override");
 const {
   index,
   indexStarred,
+  indexCategory,
   show,
   store,
   update,
@@ -19,6 +22,7 @@ productRoutes.use(methodOverride("_method"));
 productRoutes.get("/", index);
 productRoutes.get("/starred", indexStarred);
 productRoutes.get("/all", isAuthenticated, indexAll);
+productRoutes.get("/category/:id", indexCategory);
 productRoutes.post("/", isAuthenticated, store);
 productRoutes.put("/:id", isAuthenticated, update);
 
