@@ -517,6 +517,7 @@
       "stock": "11",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -532,6 +533,7 @@
       "stock": "2",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -547,6 +549,7 @@
       "stock": "3",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -562,6 +565,7 @@
       "stock": "20",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -577,6 +581,7 @@
       "stock": "8",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     },
@@ -592,6 +597,7 @@
       "stock": "11",
       "categoryId": "62b1e5e7b11d642f54e65356",
       "starred": false,
+      "show": true,
       "slug": "",
       "createdBy": "62b10046f3d5c27377f6204d"
     }
