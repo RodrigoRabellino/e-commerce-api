@@ -19,8 +19,9 @@ const index = async (req, res) => {
 // Display a listing of the resource for admins.
 const indexAll = async (req, res) => {
   try {
-    const products = await Product.find().sort({ createdAt: "desc" });
-    console.log("admin pego ");
+    const products = await Product.find()
+      .populate("categoryId")
+      .sort({ createdAt: "desc" });
     res.status(200).json(products);
   } catch (error) {
     res.status(400).json(error);
