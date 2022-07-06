@@ -16,10 +16,21 @@ const index = async (req, res) => {
 const show = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate({
+      path: "ordersHistory",
+      populate: {
+        path: "products",
+        populate: {
+          path: "productId",
+          model: "Product",
+        },
+      },
+    });
+
     res.status(201).json(user);
   } catch (error) {
     res.status(400).json(error);
+    console.log(error);
   }
 };
 
