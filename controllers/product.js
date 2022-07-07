@@ -89,7 +89,7 @@ const showBySlug = async (req, res) => {
 const store = async (req, res) => {
   const { name, description, imgUrl, price, stock, categoryId, createdBy } =
     req.body;
-  const slug = slugName(name);
+  // const slug = slugName(name);
   try {
     const product = await Product.create({
       name,
@@ -101,7 +101,6 @@ const store = async (req, res) => {
       createdBy,
       starred: false,
       show: true,
-      slug,
     });
     res.status(201).json(product);
   } catch (error) {

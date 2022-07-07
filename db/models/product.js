@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require("mongoose");
+const slugify = require("slugify");
 
 const ProductSchema = new Schema(
   {
@@ -38,7 +39,7 @@ const ProductSchema = new Schema(
     },
     slug: {
       type: String,
-      ref: "Order",
+      unique: true,
     },
     createdBy: {
       type: Types.ObjectId,
@@ -48,6 +49,14 @@ const ProductSchema = new Schema(
   },
   { timestamps: true }
 );
+
+ProductSchema.pre("save", function (next) {
+  this.slug = slugify(this.name, {
+    replacement: "_",
+    lower: true,
+  });
+  next();
+});
 
 const Product = model("Product", ProductSchema);
 

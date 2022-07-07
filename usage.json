@@ -1,10 +1,10 @@
 {
-  "Welcome": "This is a lite pice of our project, follow the links below to know more. Thanks for watching",
+  "Welcome": "This is a small piece of our project, follow the links below to know more. Thanks for watching",
   "Pages": {
     "ecommerce": "https://guitarrero.vercel.app/",
     "admin_dashboard": "https://guitarrero-admin.vercel.app/"
   },
-  "developers": {
+  "Developers": {
     "Soledad_Campos": {
       "git": "https://github.com/SoleDalia",
       "in": "https://www.linkedin.com/in/soledad-campos-arellano/"
