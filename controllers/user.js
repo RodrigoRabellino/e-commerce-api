@@ -18,6 +18,7 @@ const show = async (req, res) => {
   try {
     const user = await User.findById(id).populate({
       path: "ordersHistory",
+      options: { sort: { createdAt: -1 } },
       populate: {
         path: "products",
         populate: {

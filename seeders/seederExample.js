@@ -11,8 +11,8 @@ const createUser = async () => {
     lastName: "User",
     email: "user@user.com",
     password,
-    address: ["Cmno brandi km 34.500"],
-    phone: "092561775",
+    address: ["1600 Amp Pkwy, Mountain View, CA 94043"],
+    phone: "092761673",
     ordersHistory: [],
   });
   console.log("user created", user);
@@ -26,7 +26,7 @@ const createAdmin = async () => {
     email: "admin@admin.com",
     password,
   });
-  console.log("admin created", admin);
+  // return createProduct(admin._id);
 };
 
 const createCategory = async () => {
