@@ -1,0 +1,25 @@
+{
+  "Welcome": "This is a lite pice of our project, follow the links below to know more. Thanks for watching",
+  "Pages": {
+    "ecommerce": "https://guitarrero.vercel.app/",
+    "admin_dashboard": "https://guitarrero-admin.vercel.app/"
+  },
+  "developers": {
+    "Soledad_Campos": {
+      "git": "https://github.com/SoleDalia",
+      "in": "https://www.linkedin.com/in/soledad-campos-arellano/"
+    },
+    "Sebastian_Sosa": {
+      "git": "https://github.com/1986SebastianSosa",
+      "in": "https://www.linkedin.com/in/sebastian-sosa-cinotti/"
+    },
+    "Rodrigo_Rabellino": {
+      "git": "https://github.com/RodrigoRabellino",
+      "in": "https://www.linkedin.com/in/rodrigorabellino/"
+    },
+    "Juan_Arede": {
+      "git": "https://github.com/juanarede",
+      "in": "https://www.linkedin.com/in/juanarede/"
+    }
+  }
+}

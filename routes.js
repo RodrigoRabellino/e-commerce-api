@@ -7,8 +7,10 @@ const productRoutes = require("./routes/productRoutes");
 const tokensRoutes = require("./routes/tokensRoutes");
 const userRoutes = require("./routes/userRoutes");
 const initialSetup = require("./seeders/initialSetup");
+const usage = require("./usage.json");
 
 module.exports = (app) => {
+  app.get("/", (req, res) => res.json(usage));
   app.use("/admin", isAuthenticated, adminRoutes);
   app.use("/user", userRoutes);
   app.use("/product", productRoutes);
