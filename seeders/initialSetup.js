@@ -10,10 +10,10 @@ module.exports = async ({ req, res }) => {
     //   createAdmin();
     //   createCategory();
     // createUser();
-    createProduct();
-    res.json("ta todo piola");
+    // createProduct();
+    res.json("");
   } catch (error) {
     console.log("initialSetup", error);
-    res.json("se kago to");
+    res.json("");
   }
 };

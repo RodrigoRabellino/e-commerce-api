@@ -18,5 +18,5 @@ module.exports = (app) => {
   app.use("/tokens", tokensRoutes);
   app.use("/login", loginRoutes);
   app.use("/order", orderRoutes);
-  app.use("/resetDataBase", initialSetup);
+  app.post("/resetDataBase", initialSetup);
 };
