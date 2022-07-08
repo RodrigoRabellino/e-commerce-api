@@ -59,5 +59,4 @@ ProductSchema.pre("save", function (next) {
 });
 
 const Product = model("Product", ProductSchema);
-
 module.exports = { Product };

@@ -1,5 +1,6 @@
 const { Order } = require("../db/models/order");
 const { User } = require("../db/models/user");
+const { Product } = require("../db/models/product");
 
 // Display a listing of the resource.
 const index = async (req, res) => {
@@ -24,7 +25,7 @@ const store = async (req, res) => {
   const products = cart.map((product) => {
     return { productId: product._id, productQty: product.qty };
   });
-
+  updateProductStock(products);
   try {
     const order = await Order.create({
       userId,
@@ -58,6 +59,19 @@ const update = async (req, res) => {
 
 // Remove the specified resource from storage.
 const destroy = async (req, res) => {};
+
+const updateProductStock = async (products) => {
+  for (let i = 0; i < products.length; i++) {
+    const product = await Product.findById(products[i].productId);
+    product.stock = product.stock - products[i].productQty;
+    if (product.stock < 1) {
+      console.log("------>", product.stock);
+      product.starred = false;
+      product.show = false;
+    }
+    product.save();
+  }
+};
 
 module.exports = {
   index,

@@ -72,7 +72,7 @@ const show = async (req, res) => {
     res.status(400).json(error);
   }
 };
-
+// Display the specified resource by Slug.
 const showBySlug = async (req, res) => {
   const { slug } = req.params;
   console.log("slug", slug);
@@ -112,7 +112,7 @@ const store = async (req, res) => {
 const update = async (req, res) => {
   const { id } = req.params;
   const data = req.body;
-  data.slug = slugName(data.name);
+  // data.slug = slugName(data.name);
   try {
     const product = await Product.findByIdAndUpdate(id, data, {
       new: true,
