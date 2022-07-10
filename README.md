@@ -4,17 +4,17 @@ https://guitarrero-api.vercel.app/
 
 Developers: 
 Soledad Campos
-https://github.com/SoleDalia
-https://www.linkedin.com/in/soledad-campos-arellano
+--https://github.com/SoleDalia
+--https://www.linkedin.com/in/soledad-campos-arellano
 
 Sebastian Sosa
-https://github.com/1986SebastianSosa
-https://www.linkedin.com/in/sebastian-sosa-cinotti
+--https://github.com/1986SebastianSosa
+--https://www.linkedin.com/in/sebastian-sosa-cinotti
 
 Rodrigo Rabellino
-https://github.com/RodrigoRabellino
-https://www.linkedin.com/in/rodrigorabellino
+--https://github.com/RodrigoRabellino
+--https://www.linkedin.com/in/rodrigorabellino
 
 Juan Arede
-https://github.com/juanarede
-https://www.linkedin.com/in/juanarede
+--https://github.com/juanarede
+--https://www.linkedin.com/in/juanarede
