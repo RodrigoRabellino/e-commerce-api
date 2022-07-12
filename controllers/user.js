@@ -59,7 +59,11 @@ const store = async (req, res) => {
 };
 
 // Update the specified resource in storage.
-const update = async (req, res) => {};
+const update = async (req, res) => {
+  const changes = req.body;
+  const updatedUser = await User.findByIdAndUpdate(req.params.id, changes);
+  console.log(updatedUser);
+};
 
 // Remove the specified resource from storage.
 const destroy = async (req, res) => {};

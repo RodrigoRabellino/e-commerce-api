@@ -4,7 +4,7 @@ const Routes = require("./routes");
 const cors = require("cors");
 const morgan = require("morgan");
 const app = express();
-const port = process.env.APP_PORT || 3000;
+const port = process.env.APP_PORT || 3022;
 
 app.use(cors());
 app.use(express.json());

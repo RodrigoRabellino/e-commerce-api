@@ -7,7 +7,7 @@ userRoutes.use(methodOverride("_method"));
 
 userRoutes.get("/", isAuthenticated, index);
 userRoutes.post("/", store);
-userRoutes.put("/", update);
+userRoutes.patch("/:id", update);
 userRoutes.delete("/", destroy);
 userRoutes.get("/:id", isUserAuthenticated, show);
 
