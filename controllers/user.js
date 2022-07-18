@@ -60,6 +60,10 @@ const store = async (req, res) => {
 
 // Update the specified resource in storage.
 const update = async (req, res) => {
+  console.log(req.body.password);
+  if (req.body.password) {
+    req.body.password = await User.hashPassword(req.body.password);
+  }
   const changes = req.body;
   const updatedUser = await User.findByIdAndUpdate(req.params.id, changes);
   console.log(updatedUser);
