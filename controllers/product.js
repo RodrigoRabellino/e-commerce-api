@@ -75,7 +75,7 @@ const show = async (req, res) => {
 // Display the specified resource by Slug.
 const showBySlug = async (req, res) => {
   const { slug } = req.params;
-  console.log("slug", slug);
+
   try {
     const product = await Product.findOne({ slug: slug });
     if (!product) return res.status(404).json("product not found");
@@ -157,7 +157,6 @@ const updateStarred = async (req, res) => {
 };
 
 const slugName = (productName) => {
-  console.log(productName);
   const slugString = slugify(productName, {
     replacement: "_",
     lower: true,

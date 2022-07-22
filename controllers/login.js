@@ -28,7 +28,6 @@ const showUser = async (req, res) => {
 
 const showAdmin = async (req, res) => {
   const { email, password } = req.body;
-  console.log("admin login");
   try {
     const admin = await Admin.findOne({ email });
 
